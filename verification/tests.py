@@ -136,8 +136,7 @@ TESTS = {
         },
         # https://py.checkio.org/mission/three-words/publications/Tubis/python-3/first/share/863c87edf8d31d3286afe2057388508b/#comment-9557
         {
-            'input': ("checkio=lambda t:'T'*3in''.join("
-                      "str(w.isalpha())[0]for w in t.split())"),
+            'input': "checkio=lambda t:'T'*3in''.join(str(w.isalpha())[0]for w in t.split())",
             'answer': {'GeneratorExp': 1},
         },
         {
