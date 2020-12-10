@@ -1,0 +1,38 @@
+<p style="text-align: justify;">
+    You have to write a function that receives a python source code,
+    count list/set/dict/generator comprehensions, and returns these counts.
+    <br>
+    List comprehensions, set comprehensions, dict comprehensions, generator expressions
+    are respectively represented by "ListComp", "SetComp", "DictComp", "GeneratorExp"
+    in the results dictionary.
+</p>
+
+<p>
+    <strong>Input:</strong> A string.
+    <br>
+    <strong>Output:</strong> A dict with strings as keys and integers as values.
+</p>
+
+<br>
+
+<div class="for_info_only">
+    <strong>Examples:</strong>
+    <br><br>
+    <pre class="brush: python">
+count_comprehensions('[n ** 2 for n in range(5)]') == {'ListComp': 1}
+count_comprehensions('list(n ** 2 for n in range(5))') == {'GeneratorExp': 1}
+count_comprehensions('''\
+limit = 100
+assert all(
+    sum(n ** 3 for n in range(N)) == (N * (N - 1) // 2) ** 2
+    for N in range(1, limit)
+)
+''') == {'GeneratorExp': 2}
+</pre>
+</div>
+
+<p>
+    <strong>Note:</strong>
+    Python codes are valid (no syntax error) but do not necessarily
+    comply to PEP8 rules or any implicit rule you may think of.
+</p>
