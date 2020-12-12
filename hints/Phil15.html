@@ -1,0 +1,66 @@
+<body data-author="Phil15">
+    <div class="question-answer">
+        <div class="question">
+            I have no idea how to solve this task.
+        </div>
+        <div class="answer">
+            To quote "The Zen of Python",
+            "There should be one-- and preferably only one --obvious way to do it."
+            <br>
+            And it is with the ast module which is meant to read python syntax and help you walk in it:
+            <ul>
+                <li><a href="https://docs.python.org/library/ast.html">official documentation</a> ;</li>
+                <li><a href="https://greentreesnakes.readthedocs.io">additional documentation</a>.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="question-answer">
+        <div class="question">
+            This is a big module, what should I use first?
+        </div>
+        <div class="answer">
+            First you need to parse the code with <code>ast.parse(source)</code>.
+            <br>
+            You can display the tree with <code>ast.dump</code>.
+            Note that since python 3.9, it has an useful keyword argument "indent".
+            For example: <code>print(ast.dump(tree, indent=4))</code>.
+        </div>
+    </div>
+
+    <div class="question-answer">
+        <div class="question">
+            It seems complicated to go through that tree. How should I do it?
+        </div>
+        <div class="answer">
+            There are three ways to go through a tree:
+            <ol>
+                <li>
+                    <code>ast.walk</code>:
+                    Generates all nodes in the tree in no specified order.
+                    Useful if you don't care about the context.
+                </li>
+                <li>
+                    <code>ast.NodeVisitor</code>:
+                    Walks the tree and calls a visitor function for every node found
+                    (visitor methods you can implement by subclassing this class).
+                </li>
+                <li>
+                    <code>ast.NodeTransformer</code>:
+                    Walks the tree and allows modifications.
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="question-answer">
+        <div class="question">
+            There are so much classes in this module. What should I use?
+        </div>
+        <div class="answer">
+            You are looking for <code>ast.ListComp</code>, <code>ast.SetComp</code>,
+            <code>ast.DictComp</code> and <code>ast.GeneratorExp</code>.
+        </div>
+    </div>
+
+</body>
